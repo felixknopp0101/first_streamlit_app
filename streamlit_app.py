@@ -15,4 +15,10 @@ fruits_to_show = my_fruit_list.loc[selected_fruits]
 
 streamlit.dataframe(my_fruit_list)
 streamlit.dataframe(fruits_to_show)
+
+#new section
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
+
                   
