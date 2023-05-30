@@ -5,9 +5,9 @@ import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("select * from fruit_load_list")
-my_data_row = my_cur.fetchone()
+my_data_rows = my_cur.fetchall()
 streamlit.header("The fruitload list contains:")
-streamlit.dataframe(my_data_row)
+streamlit.dataframe(my_data_rows)
 
 streamlit.title('My Parents new healthy diner')
 streamlit.header('Breakfast Menu')
